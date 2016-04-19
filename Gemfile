@@ -10,7 +10,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 gem 'pg'
 gem 'faraday'
-
+gem 'rails_12factor', group: :production
 group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '~> 3.0'
