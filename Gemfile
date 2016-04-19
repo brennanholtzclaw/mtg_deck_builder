@@ -11,6 +11,8 @@ gem 'figaro'
 gem 'pg'
 gem 'faraday'
 gem 'rails_12factor', group: :production
+gem 'omniauth-reddit', :git => 'git://github.com/jackdempsey/omniauth-reddit.git'
+
 group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '~> 3.0'
