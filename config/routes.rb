@@ -6,4 +6,10 @@ Rails.application.routes.draw do
 
   get '/users/:user_id/decks/:deck_id', to: 'user_decks#show'
 
+  get "/auth/twitch", as: :twitch_login
+  get "/auth/twitch/callback", to: "sessions#create"
+
+  delete "/logout", to: "sessions#destroy", as: "logout"
+
+  get '/dashboard', to: 'users#show'
 end

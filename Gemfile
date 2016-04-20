@@ -11,7 +11,7 @@ gem 'figaro'
 gem 'pg'
 gem 'faraday'
 gem 'rails_12factor', group: :production
-gem 'omniauth-reddit', :git => 'git://github.com/jackdempsey/omniauth-reddit.git'
+gem 'omniauth-twitch', git: 'git://github.com/WebTheoryLLC/omniauth-twitch.git'
 
 group :development, :test do
   gem 'pry'
