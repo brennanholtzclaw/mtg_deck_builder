@@ -1,0 +1,18 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<ul>
+
+<% @standard_cards["cards"].each do |card| %>
+  <li>
+  <%= card["name"] %>   <%= card["cmc"] %><br>
+  <%= card["type"] %>   <%= card["rarity"] %><br>
+  <%= card["text"] %><br>
+  <%= "#{card["power"]}/" unless card["power"].nil? %><%= card["toughness"] unless card["toughness"].nil? %><br>
+  <%= card["imageUrl"] %><br>
+  <p></p>
+  </li>
+<% end %>
+</ul>
