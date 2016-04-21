@@ -11,10 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420015518) do
+ActiveRecord::Schema.define(version: 20160421032537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cards", force: :cascade do |t|
+    t.string   "name"
+    t.string   "manacost"
+    t.string   "colors"
+    t.integer  "cmc"
+    t.string   "type"
+    t.string   "rarity"
+    t.string   "set"
+    t.string   "text"
+    t.string   "flavor"
+    t.string   "multiverseid"
+    t.integer  "power"
+    t.integer  "toughness"
+    t.string   "imageUrl"
+    t.string   "layout"
+    t.string   "names",        default: [],              array: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "uid"
