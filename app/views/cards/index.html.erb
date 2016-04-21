@@ -2,7 +2,8 @@
   <div class="standard_sets col-md-3 col-md-offset-1 text-center">
     <h2>All MTG card sets</h2>
     <ul>
-    <% @standard_sets.each do |set| %>
+    <!-- <%# @standard_sets.each do |set| %> -->
+    <% @cards.sets.each do |set| %>
       <li><%= set["name"] %><br>
       <%= set["type"] %><br>
       <%= set["block"] %><br>
@@ -18,7 +19,8 @@
 
   <div class="standard_cards col-md-3 col-md-offset-4 text-center">
     <h2>Cards available in Standard</h2>
-    <% @standard_cards["cards"].each do |card| %>
+    <!-- <%# @standard_cards["cards"].each do |card| %> -->
+    <% @cards.cards["cards"].each do |card| %>
       <%= image_tag(card["imageUrl"]) %><br>
       <%= card["name"] %>   <%= card["cmc"] %><br>
       <%= card["type"] %>   <%= card["rarity"] %><br>
