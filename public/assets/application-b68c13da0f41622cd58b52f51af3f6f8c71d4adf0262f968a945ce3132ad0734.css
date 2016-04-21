@@ -11,8 +11,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- 
- 
  */
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
@@ -8805,4 +8803,74 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+/* line 1, /Users/brennanholtzclaw/turing/3module/mtg_deck_builder/app/assets/stylesheets/main_navbar.scss */
+.navbar {
+  background-color: white;
+  border: 0;
+  font-size: 22px;
+  letter-spacing: 4px;
+  margin-bottom: 0;
+  opacity: 0.9;
+}
+
+/* line 10, /Users/brennanholtzclaw/turing/3module/mtg_deck_builder/app/assets/stylesheets/main_navbar.scss */
+.navbar-center {
+  text-align: center;
+  width: 100%;
+}
+/* line 14, /Users/brennanholtzclaw/turing/3module/mtg_deck_builder/app/assets/stylesheets/main_navbar.scss */
+.navbar-center > li {
+  display: inline-block;
+  float: none;
+}
+
+/* line 20, /Users/brennanholtzclaw/turing/3module/mtg_deck_builder/app/assets/stylesheets/main_navbar.scss */
+.categories-nav-bar {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-left: 4px solid white;
+  border-right: 4px solid white;
+  border-top: 4px solid white;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* line 1, /Users/brennanholtzclaw/turing/3module/mtg_deck_builder/app/assets/stylesheets/welcome.scss */
+body {
+  margin-top: 100px;
+  background-color: #86b6cb;
+}
+
+/* line 6, /Users/brennanholtzclaw/turing/3module/mtg_deck_builder/app/assets/stylesheets/welcome.scss */
+.welcome-background {
+  color: black;
+}
+
+/* line 10, /Users/brennanholtzclaw/turing/3module/mtg_deck_builder/app/assets/stylesheets/welcome.scss */
+.welcome-splash {
+  height: 450px;
+  background-image: url(/assets/black_lotus-35a5390219c9f432f1e925e28b48785c5d268879da1ba2e8483b36acfe43db0f.png);
+  background-size: cover;
+}
+
+/* line 16, /Users/brennanholtzclaw/turing/3module/mtg_deck_builder/app/assets/stylesheets/welcome.scss */
+.welcome-button {
+  position: relative;
+  top: 375px;
+}
+
+/* line 1, /Users/brennanholtzclaw/turing/3module/mtg_deck_builder/app/assets/stylesheets/browse.scss */
+.standard_cards {
+  height: 550px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* line 6, /Users/brennanholtzclaw/turing/3module/mtg_deck_builder/app/assets/stylesheets/browse.scss */
+.standard_sets {
+  height: 550px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
