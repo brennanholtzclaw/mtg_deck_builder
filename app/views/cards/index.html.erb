@@ -1,11 +1,30 @@
-<% @standard_cards["cards"].each do |card| %>
-  <li>
-  <%= card["name"] %>   <%= card["cmc"] %><br>
-  <%= card["type"] %>   <%= card["rarity"] %><br>
-  <%= card["text"] %><br>
-  <%= "#{card["power"]}/" unless card["power"].nil? %><%= card["toughness"] unless card["toughness"].nil? %><br>
-  <%= card["imageUrl"] %><br>
-  <p></p>
-  </li>
-<% end %>
-</ul>
+<div class="container-fluid">
+  <div class="standard_sets col-md-3 col-md-offset-1 text-center">
+    <h2>All MTG card sets</h2>
+    <ul>
+    <% @standard_sets.each do |set| %>
+      <li><%= set["name"] %><br>
+      <%= set["type"] %><br>
+      <%= set["block"] %><br>
+      </li>
+      <p></p>
+    <% end %>
+  </ul>
+  </div>
+
+<div class="selected-card">
+
+</div>
+
+  <div class="standard_cards col-md-3 col-md-offset-4 text-center">
+    <h2>Cards available in Standard</h2>
+    <% @standard_cards["cards"].each do |card| %>
+      <%= image_tag(card["imageUrl"]) %><br>
+      <%= card["name"] %>   <%= card["cmc"] %><br>
+      <%= card["type"] %>   <%= card["rarity"] %><br>
+      <%= card["text"] %><br>
+      <%= "#{card["power"]}/" unless card["power"].nil? %><%= card["toughness"] unless card["toughness"].nil? %><br>
+      <p></p>
+    <% end %>
+  </div>
+</div>

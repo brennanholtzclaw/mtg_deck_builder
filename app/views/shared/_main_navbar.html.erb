@@ -6,7 +6,7 @@
     <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
           <li><%= link_to "Logout", logout_path, method: :delete %>
-          <span class="glyphicon glyphicon-log-out"></span></li>
+          <!-- <span class="glyphicon glyphicon-log-out"></span> --> </li>
           <li><a href="<%= "#" %>" class="cart-link">
           <span class="glyphicon glyphicon-user"></span><%= current_user.name.capitalize %>'s Account</a></li>
         <% else %>
