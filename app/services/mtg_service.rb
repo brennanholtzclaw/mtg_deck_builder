@@ -15,7 +15,7 @@ class MtgService
 
   def get_set_cards(code)
     JSON.parse(connection.get("/v1/cards?set=#{code.downcase}&pageSize=300").body)
-    binding.pry
+    # binding.pry
   end
 
   # private

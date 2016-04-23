@@ -1,6 +1,6 @@
 class SetsController < ApplicationController
   def index
+    @cards = MtgService.new.get_set_cards(params["set"])
     # binding.pry
-    @set = MtgService.new.get_set_cards(params["set"])
   end
 end
