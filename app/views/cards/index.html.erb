@@ -3,7 +3,7 @@
     <h2>All MTG card sets</h2>
     <ul>
     <% @cards.sets.each do |set| %>
-      <li><%= set["name"] %><br>
+      <li><%= link_to "#{set["name"]}", "/sets/#{set["code"].downcase}/index" %><br>
       <%= set["type"] %><br>
       <%= set["block"] %><br>
       </li>
@@ -19,7 +19,8 @@
   <div class="standard_cards col-md-3 col-md-offset-4 text-center">
     <h2>Cards available in Standard</h2>
     <% @cards.cards["cards"].each do |card| %>
-      <a class="card" data-name=card["name"] data-set=card["set"] data-image=card["imageUrl"]>
+      <!-- <div class="card" data-name=card["name"] data-set=card["set"] data-image=card["imageUrl"]> -->
+      <a href="#" class="card" data-name=card["name"] data-set=card["set"] data-image=card["imageUrl"]>
         <!-- <%#= image_tag(card["imageUrl"]) %><br> -->
         <%= card["name"] %>   <%= card["cmc"] %><br>
         <%= card["type"] %>   <%= card["rarity"] %><br>
@@ -27,6 +28,7 @@
         <%= "#{card["power"]}/" unless card["power"].nil? %><%= card["toughness"] unless card["toughness"].nil? %><br>
         <p></p>
       </a>
+    <!-- </div> -->
     <% end %>
   </div>
 </div>
