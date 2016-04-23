@@ -3,7 +3,7 @@
     <h2>All MTG card sets</h2>
     <ul>
     <% @cards.sets.each do |set| %>
-      <li><%= link_to "#{set["name"]}", "/sets/#{set["code"].downcase}/index" %><br>
+      <li><%= link_to "#{set["name"]}", sets_path(set: set["code"]) %><br>
       <%= set["type"] %><br>
       <%= set["block"] %><br>
       </li>
