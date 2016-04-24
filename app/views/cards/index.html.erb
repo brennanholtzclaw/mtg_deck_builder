@@ -12,11 +12,12 @@
   </ul>
   </div>
 
-<div class="selected-card">
+<div class="selected-card col-md-3 col-md-offset-1">
+  <h1 class="text-center">Selected Card</h1>
     <!-- ajax happens here hopefully -->
 </div>
 
-  <div class="standard_cards col-md-3 col-md-offset-5">
+  <div class="standard_cards col-md-3 col-md-offset-1">
     <h2>Featured Cards</h2>
     <% @cards.cards["cards"].each do |card| %>
     <!-- <%# @cards.cards.each do |card| %> -->
