@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421032537) do
+ActiveRecord::Schema.define(version: 20160424012006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20160421032537) do
     t.string   "manacost"
     t.string   "colors"
     t.integer  "cmc"
-    t.string   "type"
+    t.string   "card_type"
     t.string   "rarity"
     t.string   "set"
     t.string   "text"

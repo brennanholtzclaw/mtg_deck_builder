@@ -27,7 +27,7 @@ class Card < ActiveRecord::Base
       new_card.manacost       = card_info["manacost"]
       new_card.colors         = card_info["colors"]
       new_card.cmc            = card_info["cmc"]
-      new_card.type           = card_info["type"]
+      new_card.card_type      = card_info["type"]
       new_card.rarity         = card_info["rarity"]
       new_card.set            = card_info["set"]
       new_card.text           = card_info["text"]
