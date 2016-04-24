@@ -10,7 +10,9 @@ class MtgService
 
   def cards
     # @standard_cards = JSON.parse(connection.get("/v1/cards?set=dtk&pageSize=10").body)
-    JSON.parse(connection.get("/v1/cards?set=dtk&pageSize=10").body)
+    # JSON.parse(connection.get("/v1/cards?set=dtk,ori,bfz,ogw,soi&pageSize=10").body)
+    JSON.parse(connection.get("/v1/cards?set=soi&pageSize=10").body)
+    # Card.where(set: "SOI").sample(10)
   end
 
   def get_set_cards(code)

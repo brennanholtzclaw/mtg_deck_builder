@@ -1,15 +1,15 @@
 <div class="standard_cards col-md-3 col-md-offset-4 text-center">
   <h2>Cards available in this set</h2>
-  <% @cards["cards"].each do |card| %>
+  <!-- <#% @cards["cards"].each do |card| %> -->
+  <% @cards.each do |card| %>
     <!-- <div class="card" data-name=card["name"] data-set=card["set"] data-image=card["imageUrl"]> -->
     <a href="#" class="card" data-name=card["name"] data-set=card["set"] data-image=card["imageUrl"]>
-      <!-- <%#= image_tag(card["imageUrl"]) %><br> -->
-      <%= card["name"] %>   <%= card["cmc"] %><br>
+      <%= image_tag(card["imageUrl"]) %></a><br>
+      <%= card["name"] %>   <%= card["manaCost"] unless card["manaCost"].nil? %><br>
       <%= card["type"] %>   <%= card["rarity"] %><br>
       <%= card["text"] %><br>
       <%= "#{card["power"]}/" unless card["power"].nil? %><%= card["toughness"] unless card["toughness"].nil? %><br>
       <p></p>
-    </a>
   <!-- </div> -->
   <% end %>
 </div>

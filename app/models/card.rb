@@ -21,10 +21,11 @@ class Card < ActiveRecord::Base
   # end
 
   def self.from_controller(card_info)
-    where(multiverseid: card_info[:multiverseid]).first_or_create do |new_card|
+    # binding.pry
+    find_or_create_by(multiverseid: card_info["multiverseid"]) do |new_card|
       new_card.multiverseid   = card_info["multiverseid"]
       new_card.name           = card_info["name"]
-      new_card.manacost       = card_info["manacost"]
+      new_card.manacost       = card_info["manaCost"]
       new_card.colors         = card_info["colors"]
       new_card.cmc            = card_info["cmc"]
       new_card.card_type      = card_info["type"]
@@ -34,7 +35,7 @@ class Card < ActiveRecord::Base
       new_card.flavor         = card_info["flavor"]
       new_card.power          = card_info["power"]
       new_card.toughness      = card_info["toughness"]
-      new_card.imageUrl       = card_info["imageurl"]
+      new_card.imageUrl       = card_info["imageUrl"]
       new_card.layout         = card_info["layout"]
       new_card.names          = card_info["names"]
     end
