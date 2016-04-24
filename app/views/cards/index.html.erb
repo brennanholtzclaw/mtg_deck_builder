@@ -1,6 +1,6 @@
 <div class="container-fluid">
-  <div class="standard_sets col-md-3 col-md-offset-1 text-center">
-    <h2>All MTG card sets</h2>
+  <div class="standard_sets col-md-3">
+    <h2>Standard Sets</h2>
     <ul>
     <% @cards.sets.reverse.each do |set| %>
       <li><%= link_to "#{set["name"]}", sets_path(set: set["code"]) %><br>
@@ -16,8 +16,8 @@
     <!-- ajax happens here hopefully -->
 </div>
 
-  <div class="standard_cards col-md-3 col-md-offset-4 text-center">
-    <h2>Cards available in Standard</h2>
+  <div class="standard_cards col-md-3 col-md-offset-5">
+    <h2>Featured Cards</h2>
     <% @cards.cards["cards"].each do |card| %>
     <!-- <%# @cards.cards.each do |card| %> -->
       <!-- <div class="card" data-name=card["name"] data-set=card["set"] data-image=card["imageUrl"]> -->
