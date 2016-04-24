@@ -21,7 +21,12 @@ function getCard(){
         + " data-card-set="
         + card_set
         + ">"
-        + "<img src=card_image alt=card_name>"
+        + "<img src="
+        + card_image
+        + "alt="
+        + card_name
+        + ">"
+        There is a card here?!
         + "</div>"
       )
     }
