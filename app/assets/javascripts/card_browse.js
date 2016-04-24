@@ -7,7 +7,7 @@ function getCard(){
   var card_name = $(this).data("name")
   var card_set = $(this).data("set")
   var card_image = $(this).data("image")
-
+debugger
   $.ajax({
     url: "https://api.magicthegathering.io/v1/cards?name=" + card_name + "&set=" + card_set + ""
     // params: {name: card_name, set: card_set}
