@@ -1,6 +1,19 @@
-<div class="standard_cards col-md-3 col-md-offset-4 text-center">
+<div class="standard_cards col-md-3">
   <h2>Cards available in this set</h2>
   <% @cards.each do |card| %>
 <%= render partial: "/shared/cards", locals: {card: card} %>
   <% end %>
+</div>
+
+<div class="selected-card col-md-3 col-md-offset-1">
+  <h1 class="text-center">Selected Card</h1>
+    <!-- ajax happens here hopefully -->
+</div>
+
+<div class="user-deck col-md-3 col-md-offset-1">
+  <h1 class="text-center">Your Deck</h1>
+<!-- All cards in the user's deck -->
+    <% @deck.values.each do |card| %>
+<%= render partial: "/shared/cards", locals: {card: card} %>
+    <% end %>
 </div>

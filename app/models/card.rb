@@ -1,5 +1,6 @@
 class Card < ActiveRecord::Base
-  has_many :decks
+  # has_many :decks
+  # has_many :users, through: :decks
 
   def self.from_controller(card_info)
     find_or_create_by(multiverseid: card_info["multiverseid"]) do |new_card|
