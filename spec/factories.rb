@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :deck do
+    user nil
+    cards nil
+  end
   factory :card do
     name "MyString"
     manacost "MyString"

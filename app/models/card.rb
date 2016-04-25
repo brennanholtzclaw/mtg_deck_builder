@@ -1,5 +1,5 @@
 class Card < ActiveRecord::Base
-
+  has_many :decks
   # def self.from_service(card_info)
   #   if card_info.colors.nil?
   #     ColorlessCard.new
