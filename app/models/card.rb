@@ -1,27 +1,7 @@
 class Card < ActiveRecord::Base
   has_many :decks
-  # def self.from_service(card_info)
-  #   if card_info.colors.nil?
-  #     ColorlessCard.new
-  #   elsif card_info.colors.count > 1
-  #     GoldCard.new
-  #   elsif card_info.colors.first.downcase == "red"
-  #     RedCard.new
-  #   elsif card_info.colors.first.downcase == "blue"
-  #     BlueCard.new
-  #   elsif card_info.colors.first.downcase == "green"
-  #     GreenCard.new
-  #   elsif card_info.colors.first.downcase == "white"
-  #     WhiteCard.new
-  #   elsif card_info.colors.first.downcase == "black"
-  #     BlackCard.new
-  #   else
-  #     "hell I don't know..."
-  #   end
-  # end
 
   def self.from_controller(card_info)
-    # binding.pry
     find_or_create_by(multiverseid: card_info["multiverseid"]) do |new_card|
       new_card.multiverseid   = card_info["multiverseid"]
       new_card.name           = card_info["name"]
@@ -40,5 +20,24 @@ class Card < ActiveRecord::Base
       new_card.names          = card_info["names"]
     end
   end
-
 end
+
+# def self.from_service(card_info)
+#   if card_info.colors.nil?
+#     ColorlessCard.new
+#   elsif card_info.colors.count > 1
+#     GoldCard.new
+#   elsif card_info.colors.first.downcase == "red"
+#     RedCard.new
+#   elsif card_info.colors.first.downcase == "blue"
+#     BlueCard.new
+#   elsif card_info.colors.first.downcase == "green"
+#     GreenCard.new
+#   elsif card_info.colors.first.downcase == "white"
+#     WhiteCard.new
+#   elsif card_info.colors.first.downcase == "black"
+#     BlackCard.new
+#   else
+#     "hell I don't know..."
+#   end
+# end

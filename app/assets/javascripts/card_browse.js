@@ -9,13 +9,9 @@ function getCard(){
   var card_image = $(this).data("image")
 
   $.ajax({
-    // url: "https://api.magicthegathering.io/v1/cards?name=" + card_name + "&set=" + card_set + "",
     url: "http://127.0.0.1:3000/browse",
-    // params: {name: card_name, set: card_set}
-    // method: GET,
     success: function(){
       $(".selected_card").html('')
-      // debugger
       console.log(card_name)
       console.log(card_set)
       console.log(card_image)
@@ -32,7 +28,8 @@ function getCard(){
         + card_name
         + ">"
         + "<br>"
-        + "There is a card here?!"
+        + "<a class='btn btn-primary' role='button' href='#'> +1 your Deck </a>  "
+        + "<a class='btn btn-warning' role='button' href='#'> +4 your Deck </a>"
         + "</div>"
       )
     }

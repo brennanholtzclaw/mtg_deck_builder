@@ -8,10 +8,10 @@
           <li><%= link_to "Logout", logout_path, method: :delete %>
           <!-- <span class="glyphicon glyphicon-log-out"></span> --> </li>
           <li><a href="<%= "#" %>" class="cart-link">
-          <span class="glyphicon glyphicon-user"></span><%= current_user.name.capitalize %>'s Account</a></li>
+          <span class="glyphicon glyphicon-user"></span><%= current_user.name.capitalize %>'s Deck</a></li>
         <% else %>
           <li><%= link_to "Login with Twitch", twitch_login_path %>
-          <span class="glyphicon glyphicon-log-in"></span></a></li>
+          <!-- <span class="glyphicon glyphicon-log-in"></span></li> -->
           <li><a href="<%= "#" %>" class="cart-link">
           <span class="glyphicon glyphicon-user"></span>Create Account</a></li>
           <li><a href="<%= "#" %>" class="category-link">Categories</a></li>

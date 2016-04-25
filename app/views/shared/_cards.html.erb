@@ -1,0 +1,7 @@
+  <a href="#" class="card" data-name="<%= card["name"].downcase.split.join("_") %>" data-set="<%= card["set"].downcase %>" data-image="<%= card["imageUrl"] %>">
+    <%= image_tag(card["imageUrl"]) %><br></a>
+    <%= card["name"] %>   <%= card["manaCost"] %><br>
+    <%= card["type"] %>   <%= card["rarity"] %><br>
+    <%= card["text"] unless card["text"].nil? %>
+    <%= "#{card["power"]}/" unless card["power"].nil? %><%= card["toughness"] unless card["toughness"].nil? %><br>
+    <p></p>
