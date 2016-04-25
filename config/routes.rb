@@ -14,4 +14,12 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'users#show'
 
   resources :sets, only: [:index]
+
+  resources :deck_cards, only: [:index, :create, :destroy]
+
+  namespace :api, defaults: {format: :json} do
+    namespace :v1 do
+      get '/cards/:multiverseid', to: 'cards#show'
+    end
+  end
 end
