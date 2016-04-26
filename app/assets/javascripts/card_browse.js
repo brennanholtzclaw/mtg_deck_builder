@@ -5,20 +5,21 @@ $(document).ready(function(){
 function getCard(){
   // event.preventDefault <-- probably not necessary here?
   var card_name = $(this).data("name")
-  var card_set = $(this).data("set")
-  var card_image = $(this).data("image")
+  var card_multiverseid = $(this).data("multiverseid")
   // will need a "this" for the card multiverseid
 
   $.ajax({
-    // url: "http://127.0.0.1/api/v1/cards/" + card_name, //needs to be card_multiverseid
+    url: "http://127.0.0.1:3000/api/v1/cards/" + card_multiverseid,
     // make this url unique to the card clicked and have it return internal API data
     success: function(){
+      debugger
+
       $(".selected_card").html('')
       $(".selected-card").html(
         "<div class=card data-card-name="
         + card_name
-        + " data-card-set="
-        + card_set
+        + " data-card-multiverseid="
+        + card_multiverseid
         + ">"
         + "<h1>Selected Card</h1>"
         + "<img src="
