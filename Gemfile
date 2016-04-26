@@ -12,6 +12,7 @@ gem 'pg'
 gem 'faraday'
 gem 'rails_12factor', group: :production
 gem 'omniauth-twitch', git: 'git://github.com/WebTheoryLLC/omniauth-twitch.git'
+gem 'responders'
 
 group :development, :test do
   gem 'pry'

@@ -10,7 +10,7 @@ function getCard(){
   // will need a "this" for the card multiverseid
 
   $.ajax({
-    url: "http://127.0.0.1:3000/browse",
+    // url: "http://127.0.0.1/api/v1/cards/" + card_name, //needs to be card_multiverseid
     // make this url unique to the card clicked and have it return internal API data
     success: function(){
       $(".selected_card").html('')
