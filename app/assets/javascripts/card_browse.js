@@ -14,27 +14,26 @@ function getCard(){
     dataType: "json",
     success: function(card){
       $(".selected_card").html('');
-      $(card).each(function(index, card){
+      $(card).function(){
         // debugger
         $(".selected_card").append(
-                  "<div class=card data-card-name="
-                  + card.name
-                  + " data-card-multiverseid="
-                  + card.multiverseid
-                  + ">"
-                  + "<h1>Selected Card</h1>"
-                  + "<img src="
-                  + card.imageUrl
-                  + " alt="
-                  + card.name
-                  + ">"
-                  + "<br>"
-                  // + "<a class='btn btn-primary' role='button' method='POST' href='/deck_cards'> +1 your Deck </a>  "
-                  + "<button class='btn btn-primary' formmethod='POST' href='/deck_cards'> +1 your Deck </button>  "
-                  + "<a class='btn btn-warning' role='button' method='POST' href='/deck_cards'> +4 your Deck </a>"
-                  + "</div>");
+          "<div class=card data-card-name="
+          + card.name
+          + " data-card-multiverseid="
+          + card.multiverseid
+          + ">"
+          + "<h1>Selected Card</h1>"
+          + "<img src="
+          + card.imageUrl
+          + " alt="
+          + card.name
+          + ">"
+          + "<br>"
+          // + "<a class='btn btn-primary' role='button' method='POST' href='/deck_cards'> +1 your Deck </a>  "
+          + "<button class='btn btn-primary' formmethod='POST' href='/deck_cards'> +1 your Deck </button>  "
+          + "<a class='btn btn-warning' role='button' method='POST' href='/deck_cards'> +4 your Deck </a>"
+          + "</div>");
       })
-
     },
     error: function(){
       alert("Something went wrong")
