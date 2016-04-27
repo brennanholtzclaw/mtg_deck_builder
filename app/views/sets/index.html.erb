@@ -1,15 +1,20 @@
+<% cache(action: "index", action_suffix: "#{@cards.first["set"]}") do %>
 <div class="standard_cards col-md-3">
   <h2>Cards available in this set</h2>
   <% @cards.each do |card| %>
 <%= render partial: "/shared/cards", locals: {card: card} %>
   <% end %>
 </div>
+<% end %>
 
+<% cache(action: "index", action_suffix: "selected_card_in_set_view" do %>
 <div class="selected-card col-md-3 col-md-offset-1">
   <h1 class="text-center">Selected Card</h1>
     <!-- ajax happens here ... hopefully -->
 </div>
+<% end %>
 
+<% cache(action: "index", action_suffix: "deck_in_set_view") do %>
 <div class="user-deck col-md-3 col-md-offset-1">
   <h1 class="text-center">Your Deck</h1>
 <!-- All cards in the user's deck -->
@@ -17,3 +22,4 @@
 <%= render partial: "/shared/cards", locals: {card: card} %>
     <% end %>
 </div>
+<% end %>

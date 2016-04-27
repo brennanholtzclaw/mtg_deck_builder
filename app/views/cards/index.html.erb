@@ -1,3 +1,4 @@
+<% cache(action: "index", action_suffix: "standard_sets") do %>
 <div class="container-fluid">
   <div class="standard_sets col-md-3">
     <h2>Standard Sets</h2>
@@ -11,12 +12,16 @@
     <% end %>
   </ul>
   </div>
+<% end %>
 
+<% cache(action: "index", action_suffix: "selected_card") do %>
 <div class="selected-card col-md-3 col-md-offset-1">
   <h1 class="text-center">Selected Card</h1>
     <!-- ajax happens here hopefully -->
 </div>
+<% end %>
 
+<% cache(action: "index", action_suffix: "featured_cards") do %>
   <div class="standard_cards col-md-3 col-md-offset-1">
     <h2>Featured Cards</h2>
     <% @cards.cards["cards"].each do |card| %>
@@ -25,3 +30,4 @@
     <% end %>
   </div>
 </div>
+<% end %>

@@ -12,8 +12,6 @@ function getCard(){
     url: "http://127.0.0.1:3000/api/v1/cards/" + card_multiverseid,
     // make this url unique to the card clicked and have it return internal API data
     success: function(){
-      debugger
-
       $(".selected_card").html('')
       $(".selected-card").html(
         "<div class=card data-card-name="
