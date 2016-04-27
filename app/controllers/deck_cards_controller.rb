@@ -10,16 +10,15 @@ class DeckCardsController < ApplicationController
   end
 
   def destroy
-    redirect_to :back
-  end
+# binding.pry
+  @card = Card.find_by(multiverseid: params[:id])
 
+  @deck.remove_card(@card.multiverseid)
+  flash[:success] = "Removed #{@card.name} from your deck"
+
+  redirect_to :back
+end
   def index
-    @deck_cards = @deck.contents.values
-    redirect_to :back
-    # binding.pry
-    # render Rails.application.routes.recognize_path(request.referer)[:controller]
-    # call = Rails.application.routes.recognize_path(request.referer)
-    # aim = "/#{call[:controller]}##{call[:action]}"
-    # render aim
+    @deck_cards = @deck.fetch_cards
   end
 end

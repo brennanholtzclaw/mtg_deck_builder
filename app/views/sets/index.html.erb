@@ -14,7 +14,7 @@
 </div>
 <% end %>
 
-<% cache(action: "index", action_suffix: "deck_in_set_view") do %>
+<%# cache(action: "index", action_suffix: "deck_in_set_view") do %>
 <div class="user-deck col-md-3 col-md-offset-1">
   <h1 class="text-center">Your Deck</h1>
     <% @deck_cards.each do |card| %>
@@ -25,7 +25,8 @@
       <%= card[0]["text"] unless card[0]["text"].nil? %>
       <%= "#{card[0]["power"]}/" unless card[0]["power"].nil? %><%= card[0]["toughness"] unless card[0]["toughness"].nil? %><br>
       QTY in deck: <%= card[1] %>
+      <%= button_to "Remove from deck", deck_card_path(card[0]["multiverseid"]), class: "btn btn-danger", method: "delete" %>
       <p></p>
     <% end %>
 </div>
-<% end %>
+<%# end %>

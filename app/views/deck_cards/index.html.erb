@@ -1,2 +1,21 @@
-<h1>DeckCards#index</h1>
-<p>Find me in app/views/deck_cards/index.html.erb</p>
+<div class="user-deck col-md-3 col-md-offset-1">
+  <h1 class="text-center">Your Deck</h1>
+    <% @deck_cards.each do |card| %>
+    <a href="#" class="card" data-name="<%= card[0]["name"].downcase.split.join("_") %>" data-multiverseid="<%= card[0]["multiverseid"].to_i %>">
+      <%= image_tag(card[0]["imageUrl"]) %><br></a>
+      <%= card[0]["name"] %>   <%= card[0]["manaCost"] %><br>
+      <%= card[0]["type"] %>   <%= card[0]["rarity"] %><br>
+      <%= card[0]["text"] unless card[0]["text"].nil? %>
+      <%= "#{card[0]["power"]}/" unless card[0]["power"].nil? %><%= card[0]["toughness"] unless card[0]["toughness"].nil? %><br>
+      QTY in deck: <%= card[1] %>
+      <%= button_to "Remove from deck", deck_card_path(card[0]["multiverseid"]), class: "btn btn-danger", method: "delete" %>
+      <p></p>
+    <% end %>
+</div>
+
+<% cache(action: "index", action_suffix: "selected_card_in_set_view") do %>
+<div class="selected-card col-md-3 col-md-offset-1">
+  <h1 class="text-center">Selected Card</h1>
+    <!-- ajax happens here ... hopefully -->
+</div>
+<% end %>
