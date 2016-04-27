@@ -8874,3 +8874,8 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
+/* line 12, /Users/brennanholtzclaw/turing/3module/mtg_deck_builder/app/assets/stylesheets/browse.scss */
+.card {
+  color: black;
+}
