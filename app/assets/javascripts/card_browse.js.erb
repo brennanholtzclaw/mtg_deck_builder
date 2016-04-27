@@ -36,9 +36,19 @@ function showCard(card){
       + card.name
       + ">"
       + "<br>"
-      // + "<a class='btn btn-primary' role='button' method='POST' href='/deck_cards'> +1 your Deck </a>  "
-      + "<button class='btn btn-primary' formmethod='POST' href='/deck_cards'> +1 your Deck </button>  "
-      + "<a class='btn btn-warning' role='button' method='POST' href='/deck_cards'> +4 your Deck </a>"
+      // // + "<a class='btn btn-primary' role='button' method='POST' href='/deck_cards'> +1 your Deck </a>  "
+      + "<form class='button_to' method='post' action='/deck_cards?"
+      + card.multiverseid
+      + "'>"
+      + "<input class='btn btn-primary' type='submit' value='+1 your deck'>  "
+      + "</form>"
+      + "<form class='button_to' method='post' action='/deck_cards?"
+      + card.multiverseid
+      + "&qty=4'>"
+      + "<input class='btn btn-warning' type='submit' value='+4 your deck'>  "
+      + "</form>"
+      // + "<button class='btn btn-primary' formmethod='POST' href='/deck_cards'> +1 your Deck </button>  "
+      // + "<a class='btn btn-warning' role='button' method='POST' href='/deck_cards'> +4 your Deck </a>"
       + "</div>");
   })
 }
