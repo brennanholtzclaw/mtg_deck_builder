@@ -1,4 +1,4 @@
-  <a href="#" class="card" data-name="<%= card["name"].downcase.split.join("_") %>" data-multiverseid="<%= card["multiverseid"] %>">
+  <a href="#" class="card" data-name="<%= card["name"].downcase.split.join("_") %>" data-multiverseid="<%= card["multiverseid"].to_i %>">
     <%= image_tag("/assets/mtg_icon") %><br></a>
     <%= card["name"] %>   <%= card["manaCost"] %><br>
     <%= card["type"] %>   <%= card["rarity"] %><br>

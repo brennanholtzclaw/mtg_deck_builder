@@ -15,13 +15,13 @@ class Deck
   end
 
   def update_quantity(subtract, card)
-    contents[card.id.to_s] ||= 0
+    contents[card.multiverseid.to_s] ||= 0
     if subtract
-      contents[card.id.to_s] -= 1
-      remove_card(card.id) if contents[card.id.to_s] == 0
+      contents[card.multiverseid.to_s] -= 1
+      remove_card(card.multiverseid) if contents[card.multiverseid.to_s] == 0
       [:danger, "1 #{card.name} removed from your deck!"]
     else
-      contents[card.id.to_s] += 1
+      contents[card.multiverseid.to_s] += 1
       [:success, "1 #{card.name} added to your deck!"]
     end
   end
@@ -29,4 +29,11 @@ class Deck
   def remove_card(card_id)
     contents.delete(card_id.to_s)
   end
+
+  def fetch_cards
+    contents.map do |card_id, quantity|
+      [Card.find_by(multiverseid: card_id.to_i), quantity]
+    end
+  end
+
 end

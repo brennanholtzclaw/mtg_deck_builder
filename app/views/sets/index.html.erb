@@ -17,10 +17,15 @@
 <% cache(action: "index", action_suffix: "deck_in_set_view") do %>
 <div class="user-deck col-md-3 col-md-offset-1">
   <h1 class="text-center">Your Deck</h1>
-<!-- All cards in the user's deck -->
     <% @deck_cards.each do |card| %>
-    <!-- <%# @deck_cards.values.each do |card| %> -->
-<%= render partial: "/shared/cards", locals: {card: card} %>
+    <a href="#" class="card" data-name="<%= card[0]["name"].downcase.split.join("_") %>" data-multiverseid="<%= card[0]["multiverseid"].to_i %>">
+      <%= image_tag(card[0]["imageUrl"]) %><br></a>
+      <%= card[0]["name"] %>   <%= card[0]["manaCost"] %><br>
+      <%= card[0]["type"] %>   <%= card[0]["rarity"] %><br>
+      <%= card[0]["text"] unless card[0]["text"].nil? %>
+      <%= "#{card[0]["power"]}/" unless card[0]["power"].nil? %><%= card[0]["toughness"] unless card[0]["toughness"].nil? %><br>
+      QTY in deck: <%= card[1] %>
+      <p></p>
     <% end %>
 </div>
 <% end %>

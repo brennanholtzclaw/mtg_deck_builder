@@ -9,7 +9,6 @@
           <!-- <span class="glyphicon glyphicon-log-out"></span> --> </li>
           <li><a href="<%= "#" %>" class="cart-link">
           <!-- <span class="glyphicon glyphicon-user"></span><%#= current_user.name.capitalize %>'s Deck <%#= "(#{@deck.contents.count})" %></a></li> -->
-          <% binding.pry %>
           <span class="glyphicon glyphicon-user"></span><%= current_user.name.capitalize %>'s Deck <%= "(#{@deck.contents.values.sum})" %></a></li>
         <% else %>
           <li><%= link_to "Login with Twitch", twitch_login_path %>

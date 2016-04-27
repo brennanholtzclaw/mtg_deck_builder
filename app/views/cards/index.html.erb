@@ -25,9 +25,8 @@
   <div class="standard_cards col-md-3 col-md-offset-1">
     <h2>Featured Cards</h2>
     <% @cards.cards["cards"].each do |card| %>
-    <!-- <%# @cards.cards.each do |card| %> -->
-<%= render partial: "/shared/cards", locals: {card: card} %>
+        <%= render partial: "/shared/cards", locals: {card: card} %>
     <% end %>
   </div>
+  <% end %>
 </div>
-<% end %>
