@@ -18,7 +18,8 @@
 <div class="user-deck col-md-3 col-md-offset-1">
   <h1 class="text-center">Your Deck</h1>
 <!-- All cards in the user's deck -->
-    <% @deck_cards.values.each do |card| %>
+    <% @deck_cards.each do |card| %>
+    <!-- <%# @deck_cards.values.each do |card| %> -->
 <%= render partial: "/shared/cards", locals: {card: card} %>
     <% end %>
 </div>

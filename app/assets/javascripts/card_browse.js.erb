@@ -21,7 +21,7 @@ function getCard(){
 
 function showCard(card){
   $(".selected-card").html('')
-  $(card).each(function(index, post){
+  $(card).each(function(index, card){
     // debugger
     $(".selected-card")
       .append("<div class=card data-card-name="
@@ -39,7 +39,7 @@ function showCard(card){
       + "<form class='button_to' method='post' action='/deck_cards?multiverseid="
       + card.multiverseid
       + "&qty=1'>"
-      + "<input class='btn btn-primary' type='submit' value='+1 your deck'>  "
+      + "     <input class='btn btn-primary' type='submit' value='+1 your deck'>  "
       + "</form>"
       + "<form class='button_to' method='post' action='/deck_cards?multiverseid="
       + card.multiverseid
