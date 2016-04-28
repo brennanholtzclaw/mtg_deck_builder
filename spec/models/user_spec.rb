@@ -2,17 +2,6 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   it "creates user correctly" do
-    # raw_data = {
-    #   uid: "123",
-    #   name: "Test Name",
-    #   display_name: "Test Display Name",
-    #   image: "http://www.example.com/fake.png",
-    #   oauth_token: "wasdxreallylongstringwasdx",
-    #   extra_fake_data: "This shouldn't populate",
-    # }
-    #
-    # user = User.from_omniauth(raw_data.to_json)
-    # user = create(:user)
 
     raw_info = OpenStruct.new({"provider"=>"twitch",
  "uid"=>115671636,
@@ -46,5 +35,6 @@ RSpec.describe User, type: :model do
      user = User.first
 
     expect(user.name).to eq("wasabimation")
+    expect(user.methods).to_not include("extra_fake_method")
   end
 end
