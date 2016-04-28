@@ -5,16 +5,12 @@
     </div>
     <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-          <li><%= link_to "Logout", logout_path, method: :delete %>
-          <!-- <span class="glyphicon glyphicon-log-out"></span> --> </li>
+          <li><%= link_to "Logout", logout_path, method: :delete %></li>
           <li><a href="<%= deck_cards_path %>" class="cart-link">
-          <!-- <span class="glyphicon glyphicon-user"></span><%#= current_user.name.capitalize %>'s Deck <%#= "(#{@deck.contents.count})" %></a></li> -->
           <span class="glyphicon glyphicon-user"></span><%= current_user.name.capitalize %>'s Deck <%= "(#{@deck.contents.values.sum})" %></a></li>
         <% else %>
           <li><%= link_to "Login with Twitch", twitch_login_path %>
-          <!-- <span class="glyphicon glyphicon-log-in"></span></li> -->
           <li><a href="<%= "#" %>" class="cart-link">
-          <span class="glyphicon glyphicon-user"></span>Create Account</a></li>
           <li><a href="<%= "#" %>" class="category-link">Categories</a></li>
         <% end %>
     </ul>

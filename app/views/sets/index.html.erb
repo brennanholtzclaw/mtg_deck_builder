@@ -14,7 +14,6 @@
 </div>
 <% end %>
 
-<%# cache(action: "index", action_suffix: "deck_in_set_view") do %>
 <div class="user-deck col-md-3 col-md-offset-1">
   <h1 class="text-center">Your Deck</h1>
     <% @deck_cards.each do |card| %>
@@ -29,4 +28,3 @@
       <p></p>
     <% end %>
 </div>
-<%# end %>

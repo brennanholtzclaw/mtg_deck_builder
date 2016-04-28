@@ -10,14 +10,14 @@ class DeckCardsController < ApplicationController
   end
 
   def destroy
-# binding.pry
-  @card = Card.find_by(multiverseid: params[:id])
+    @card = Card.find_by(multiverseid: params[:id])
 
-  @deck.remove_card(@card.multiverseid)
-  flash[:success] = "Removed #{@card.name} from your deck"
+    @deck.remove_card(@card.multiverseid)
+    flash[:success] = "Removed #{@card.name} from your deck"
 
-  redirect_to :back
-end
+    redirect_to :back
+  end
+
   def index
     @deck_cards = @deck.fetch_cards
   end

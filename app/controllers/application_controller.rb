@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   attr_accessor :deck
   protect_from_forgery with: :exception
-  # protect_from_forgery with: :null_session
 
   before_action :set_deck
   helper_method :current_user

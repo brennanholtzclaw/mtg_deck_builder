@@ -1,16 +1,11 @@
-# class Deck < ActiveRecord::Base
 class Deck
   attr_accessor :contents
-  # belongs_to :user
-  # belongs_to :cards
 
   def initialize(starting_cards)
-    # @contents = starting_cards || []
     @contents = starting_cards || {}
   end
 
   def card_count
-    # @contents.count
     @contents.values.sum
   end
 
@@ -35,5 +30,4 @@ class Deck
       [Card.find_by(multiverseid: card_id.to_i), quantity]
     end
   end
-
 end
