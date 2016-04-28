@@ -11590,36 +11590,57 @@ function getCard(){
   var card_multiverseid = $(this).data("multiverseid")
 
   $.ajax({
-    url: "http://127.0.0.1:3000/api/v1/cards/" + card_multiverseid,
+    url: "/api/v1/cards/" + card_multiverseid,
     // make this url unique to the card clicked and have it return internal API data
     method: "GET",
     dataType: "json",
-    success: function(card){
-      $(".selected_card").html('');
-      $(card).function(){
-        // debugger
-        $(".selected_card").html(
-          "<div class=card data-card-name="
-          + card.name
-          + " data-card-multiverseid="
-          + card.multiverseid
-          + ">"
-          + "<h1>Selected Card</h1>"
-          + "<img src="
-          + card.imageUrl
-          + " alt="
-          + card.name
-          + ">"
-          + "<br>"
-          // + "<a class='btn btn-primary' role='button' method='POST' href='/deck_cards'> +1 your Deck </a>  "
-          + "<button class='btn btn-primary' formmethod='POST' href='/deck_cards'> +1 your Deck </button>  "
-          + "<a class='btn btn-warning' role='button' method='POST' href='/deck_cards'> +4 your Deck </a>"
-          + "</div>");
-      })
-    },
+    success: showCard,
     error: function(){
       alert("Something went wrong")
     }
+  })
+}
+
+function showCard(card){
+  var AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
+
+  $(".selected-card").html('')
+  $(card).each(function(index, card){
+    // debugger
+    $(".selected-card")
+      .append("<div class=card data-card-name="
+      // debugger
+      + card.name
+      + " data-card-multiverseid="
+      + card.multiverseid
+      + ">"
+      + "<h1>Selected Card</h1>"
+      + "<img src="
+      + card.imageUrl
+      + " alt="
+      + card.name
+      + ">"
+      + "<br>"
+      // + ""
+      + "<form class='button_to' method='post' action='/deck_cards?multiverseid="
+      + card.multiverseid
+      + "&authenticity_token="
+      + AUTH_TOKEN
+      + "&qty=1'>"
+      + "<input class='btn btn-primary' type='submit' value='+1 your deck'>  "
+      // + "<input type='hidden' name='authenticity_token' value='"
+      // + AUTH_TOKEN
+      // + "'>"
+      + "</form>"
+      // + "<form class='button_to' method='post' action='/deck_cards?multiverseid="
+      // + card.multiverseid
+      // + "&qty=4'>"
+      // + "<input class='btn btn-warning' type='submit' value='+4 your deck'>  "
+      // // + "<input type='hidden' name='authenticity_token' value='"
+      // // + AUTH_TOKEN
+      // // + "'>"
+      // + "</form>"
+      + "</div>");
   })
 }
 ;

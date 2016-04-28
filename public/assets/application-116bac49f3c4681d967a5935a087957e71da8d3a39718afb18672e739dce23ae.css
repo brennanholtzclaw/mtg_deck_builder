@@ -8871,11 +8871,16 @@ body {
 /* line 6, /Users/brennanholtzclaw/turing/3module/mtg_deck_builder/app/assets/stylesheets/browse.scss */
 .standard_sets {
   height: 550px;
+}
+
+/* line 9, /Users/brennanholtzclaw/turing/3module/mtg_deck_builder/app/assets/stylesheets/browse.scss */
+.user-deck {
+  height: 550px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
-/* line 12, /Users/brennanholtzclaw/turing/3module/mtg_deck_builder/app/assets/stylesheets/browse.scss */
+/* line 15, /Users/brennanholtzclaw/turing/3module/mtg_deck_builder/app/assets/stylesheets/browse.scss */
 .card {
   color: black;
 }
