@@ -3,8 +3,10 @@
   <div class="standard_sets col-md-3">
     <h2>Standard Sets</h2>
     <ul>
-    <% @cards.sets.reverse.each do |set| %>
+    <% @sets.sets.reverse.each do |set| %>
+    <!-- <%# @cards.sets.reverse.each do |set| %> -->
       <li><%= link_to "#{set["name"]}", sets_path(set: set["code"]) %><br>
+      <!-- <li><%#= link_to "#{set}", sets_path(set: set) %><br> -->
       <%= set["type"] %><br>
       <%= set["block"] unless set["block"].nil? %>
       </li>
@@ -21,12 +23,13 @@
 </div>
 <% end %>
 
-<% cache(action: "index", action_suffix: "featured_cards") do %>
+<!-- <%# cache(action: "index", action_suffix: "featured_cards") do %> -->
   <div class="standard_cards col-md-3 col-md-offset-1">
     <h2>Featured Cards</h2>
-    <% @cards.cards["cards"].each do |card| %>
+    <!-- <%# @cards.cards["cards"].each do |card| %> -->
+    <% @cards.each do |card| %>
         <%= render partial: "/shared/cards", locals: {card: card} %>
     <% end %>
   </div>
-  <% end %>
+  <!-- <%# end %> -->
 </div>
