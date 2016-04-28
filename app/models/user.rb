@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # has_one :deck
   # has_many :cards, through: :deck
-
+# attr_reader :uid, :name, :display_name, :image, :oauth_token
   def self.from_omniauth(auth_info)
     where(uid: auth_info[:uid]).first_or_create do |new_user|
       new_user.uid                = auth_info.uid

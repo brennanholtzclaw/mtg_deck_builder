@@ -8,7 +8,7 @@ FactoryGirl.define do
     manacost "MyString"
     colors "MyString"
     cmc 1
-    type ""
+    card_type ""
     rarity "MyString"
     set "MyString"
     text "MyString"
